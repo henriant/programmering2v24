@@ -3,6 +3,8 @@ package no.hiof.henriant.oblig4;
 import no.hiof.henriant.oblig4.models.Planet;
 import no.hiof.henriant.oblig4.models.PlanetSystem;
 import no.hiof.henriant.oblig4.models.Star;
+import no.hiof.henriant.oblig4.interfaces.ObjectFileHandler;
+import no.hiof.henriant.oblig4.tools.StarCSVFileHandler;
 
 import java.util.ArrayList;
 
@@ -61,5 +63,19 @@ public class Main {
 
         System.out.println(mars.compareTo(earth));
 
+        StarCSVFileHandler starCSVFileHandler = new StarCSVFileHandler();
+        starCSVFileHandler.writeObjectsToFile("StarInformation.txt", sun);
+        starCSVFileHandler.readObjectsFromFile("StarInformation.txt");
+
+        /* -----KOMMENTAR ------
+        Koden min kjører uten noen error, men den gjør ikke som forventet.
+
+        Metoden for å sortere listen med planeter fungerte ikke. Tanken bak var å sortere de i alfabetisk rekkefølge. Jeg tror jeg endte opp med en metode som sammenligner to planeter opp mot hverandre?
+        Utskriften blir -1 og jeg har ikke helt skjønt hvorfor. Metoden er iallfall ikke korrekt.
+
+        Metoden writeObjectsToFile() som jeg har overridet i StarCSVFileHandler
+        skriver ingenting til den valgte tekstfilen. I metoden for readObjectFromFile() har jeg prøvd å gjøre den så lik som den vi brukte i forelesning, uten hell.
+        Jeg er ikke helt sikker på hvor problemet ligger, og jeg er derfor ikke i stand til å fikse det. Google og chatGPT har heller ikke vært noe særlig hjelp.
+         */
     }
 }
