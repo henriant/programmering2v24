@@ -63,8 +63,15 @@ public class Main {
 
         System.out.println(mars.compareTo(earth));
 
+        // Nye Star-objekter
+        Star star1 = new Star("MU Cas", 4.192, 4.657, 14750);
+        Star star2 = new Star("V69-47", 1.316, 0.876, 5945);
+        Star star3 = new Star("YZ Cas", 2.547, 2.308, 9200);
+        Star star4 = new Star("NGC188", 1.425, 1.102, 5900);
+        Star star5 = new Star("zet Phe", 2.853, 3.922, 14550);
+
         StarCSVFileHandler starCSVFileHandler = new StarCSVFileHandler();
-        starCSVFileHandler.writeObjectsToFile("StarInformation.txt", sun);
+        starCSVFileHandler.writeObjectsToFile("StarInformation.txt", star1);
         starCSVFileHandler.readObjectsFromFile("StarInformation.txt");
 
         /* -----KOMMENTAR ------
